@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup Form</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <h2>Signup Form</h2>
+  <input type="text" id="Fname" placeholder="First Name"><br>
+  <input type="text" id="Lname" placeholder="Last Name"><br>
+  <input type="email" id="Email" placeholder="Email"><br>
+  <input type="password" id="Password" placeholder="Password"><br>
+  <button id="submitBtn">Signup</button>
+    <script src="app.js"></script>
+  <!-- <script>
+    let submitBtn = document.getElementById('submitBtn');
+
+    submitBtn.addEventListener('click', async () => {
+      let Fname = document.getElementById('Fname').value;
+      let Lname = document.getElementById('Lname').value;
+      let Email = document.getElementById('Email').value;
+      let Password = document.getElementById('Password').value;
+
+      try {
+        const res = await axios.post('http://localhost:3000/api/home', {
+          Fname,
+          Lname,
+          Email,
+          password: Password
+
+        });
+
+        console.log(res);
+        alert(res.data.message);
+      } catch (err) {
+        console.error(err);
+        alert("Signup failed");
+      }
+    });
+  </script> -->
+</body>
+</html>
