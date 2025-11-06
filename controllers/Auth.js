@@ -9,7 +9,7 @@ async function home(req, res) {
                 return console.log(err);
             }
             console.log("generated password ", hash);
-            const newUser = new User({ Fname, Lname, Email, password:hash });
+            const newUser = new User({ Fname, Lname, Email, password: hash });
             newUser.save();
             console.log(newUser);
             res.send({
@@ -30,22 +30,26 @@ async function home(req, res) {
 async function login(req, res) {
     try {
         const { Email, password } = req.body;
-        const check = await User.findOne({ Email, password });
-        console.log(check);
-        res.send({
-            message: "user successfully login"
-        })
+        const check = await User.findOne({ Email });
+        console.log(check)  
+        hashy.verify(password, check.password, function (error, success) {
+            if (error) {
+                return console.error(error);
+            }
+
+            if (success) {
+                res.send("you are now authenticated!");
+            } else {
+                res.send("invalid password!");
+            }
+        });
+        console.log("user login successfuly");
     } catch (err) {
         res.send(
-            "Invalid user".err
+            "Invalid user", err
         )
 
     }
 }
 
-function Name (req,res){
-    let name = req.body;
-    res.send(name);
-
-}
-module.exports = { home, login , Name}
+module.exports = { home, login }
