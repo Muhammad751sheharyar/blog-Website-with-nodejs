@@ -76,11 +76,7 @@ function bloges() {
   });
 
 
-
-
-
   let other = document.createElement("div");
-  // other.innerText = authorNameinp;
   other.setAttribute('class', 'autherName');
   mainBox.append(other);
   // console.log(other);
@@ -88,51 +84,6 @@ function bloges() {
   let para3 = document.createElement("p");
   para3.innerText = Author;
   other.append(para3);
-
-  // let icon3 = document.createElement("div");
-  // icon3.setAttribute('class', 'icon');
-  // other.append(icon3);
-
-
-  // icon3.addEventListener('click', function () {
-  //   let edit = prompt("enter the change value");
-  //   para3.innerText = edit;
-  // })
-
-  // let btnBox = document.createElement("div");
-  // btnBox.setAttribute('class', 'btnBox');
-  // mainBox.append(btnBox);
-
-
-
-
-  // let Edit = document.createElement("button");
-  // Edit.innerText = "Edit All";
-  // Edit.setAttribute('class', 'editBtn');
-  // btnBox.append(Edit);
-
-  // Edit.addEventListener('click', function () {
-  //   let change1 = prompt("Enter The blog Title");
-  //   para1.innerText = change1;
-  //   let change2 = prompt("Enter the description");
-  //   para2.innerText = change2;
-  //   let change3 = prompt("Enter the autherName");
-  //   para3.innerText = change3;
-  // })
-
-
-
-  // let DeleteBtn = document.createElement("button");
-  // DeleteBtn.innerText = "Delete Blog"
-  // DeleteBtn.setAttribute('class', 'Dbtn')
-  // btnBox.append(DeleteBtn);
-
-  // DeleteBtn.addEventListener('click', function () {
-  //   mainBox.remove()
-  // })
-
-
-
 
 }
 
