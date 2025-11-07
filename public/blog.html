@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Website</title>
+    <link rel="stylesheet" href="style.css">
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="mainPage">
+        <div class="Pheader">
+            <div class="Plogo"><img src="../assets/822729.png" alt=""></div>
+            <div class="plogoutmain">
+                <div class="userimg"><img src="" alt="sd" srcset=""></div>
+                <div class="username" id="userName"></div>
+                <!-- <p id="userName" class="parap"></p> -->
+                <div class="PlogoutBTN" id="blLogout" onclick="blLogout()">LOGOUT</div>
+            </div>
+        </div>
+        <div class="from" id="form">
+            <!-- <form action=""> -->
+            <div class="crossMain">
+                <p>Create a new Blog </p>
+                <div onclick="form.style.display='none',body.style.backgroundColor='white'" class="cross">x</div>
+            </div>
+            <input type="text" placeholder="blogTittle" id="blogTittle" onfocus="this.style.backgroundColor='gray'"
+                onblur="this.style.backgroundColor='gray'">
+            <textarea name="text" placeholder="Blog" id="blogContent"></textarea>
+            <input type="text" placeholder="Author Name" id="authorName">
+            <!-- <input type="file" placeholder="file" id="file"> -->
+
+            <button  id="bloges" onclick="bloges(),body.style.backgroundColor='white'" class="submit">submit</button>
+        </div>
+        <div class="createBlog">
+            
+            <button class="btnp " id="clickbtn" onclick="panel(), body.style.backgroundColor='gray'">Create
+                Blog</button>
+        </div>
+        <div class="blogseciton" id="panel">
+        </div>
+    </div>
+    <p id="userd"></p>
+    <script src="blog.js"></script>
+</body>
+
+</html>

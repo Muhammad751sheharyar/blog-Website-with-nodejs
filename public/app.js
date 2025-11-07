@@ -17,7 +17,7 @@ submitBtn.addEventListener('click', async () => {
             password: Password
         });
         console.log("Response from server:", res.data);
-        // alert(res.data.message);
+        alert(res.data.message);
           window.open('login.html');
 
     } catch (err) {

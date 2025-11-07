@@ -16,7 +16,9 @@ loginBtn.addEventListener('click', async () => {
           Email,
           password  
         })
-        console.log(res.data);
+        // alert(res.data);
+        alert("login sucessFully")
+        window.open('blog.html');
 
     } catch (err) {
         console.log(err)

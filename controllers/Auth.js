@@ -1,6 +1,7 @@
 // const mongoose=require("mongoose");
 const User = require("../dbschema/schema");
 const hashy = require("hashy");
+const UserBlog=require("../dbschema/blogSchema");
 async function home(req, res) {
     try {
         const { Fname, Lname, Email, password } = req.body;
@@ -52,4 +53,19 @@ async function login(req, res) {
     }
 }
 
-module.exports = { home, login }
+async function Create(req,res){
+  try{
+    const{blogTittle,blogdesc,Author}=req.body;
+  const blogSave=new UserBlog({blogTittle,blogdesc,Author});
+  blogSave.save();
+  res.send({
+    message:"blog successfully create"
+  })
+  }catch(err){
+    console.log(err)
+
+  }
+  
+}
+
+module.exports = { home, login,Create}
