@@ -61,7 +61,10 @@ async function Create(req,res){
   res.send({
     message:"blog successfully create"
   })
+  console.log("blog successfully created");
+
   }catch(err){
+
     console.log(err)
 
   }
