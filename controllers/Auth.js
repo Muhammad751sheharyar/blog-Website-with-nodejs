@@ -1,7 +1,7 @@
 // const mongoose=require("mongoose");
 const User = require("../dbschema/schema");
 const hashy = require("hashy");
-const UserBlog=require("../dbschema/blogSchema");
+const UserBlog = require("../dbschema/blogSchema");
 async function home(req, res) {
     try {
         const { Fname, Lname, Email, password } = req.body;
@@ -32,7 +32,7 @@ async function login(req, res) {
     try {
         const { Email, password } = req.body;
         const check = await User.findOne({ Email });
-        console.log(check)  
+        console.log(check)
         hashy.verify(password, check.password, function (error, success) {
             if (error) {
                 return console.error(error);
@@ -53,22 +53,30 @@ async function login(req, res) {
     }
 }
 
-async function Create(req,res){
-  try{
-    const{blogTittle,blogdesc,Author}=req.body;
-  const blogSave=new UserBlog({blogTittle,blogdesc,Author});
-  blogSave.save();
-  res.send({
-    message:"blog successfully create"
-  })
-  console.log("blog successfully created");
+async function CreateBlog(req, res) {
+    try {
+        const { blogTittle, blogdesc, Author } = req.body;
+        const blogSave = new UserBlog({ blogTittle, blogdesc, Author });
+        blogSave.save();
+        res.send({
+            message: "blog successfully create"
+        })
+        console.log("blog successfully created");
 
-  }catch(err){
+    } catch (err) {
 
-    console.log(err)
+        console.log(err)
 
-  }
-  
+    }
+
 }
 
-module.exports = { home, login,Create}
+
+async function viewBlog(req, res) {
+    // res.send("Hello World")
+    const data = await UserBlog.find({});
+    res.send(data);
+      console.log(data);
+}
+
+module.exports = { home, login, CreateBlog, viewBlog }    

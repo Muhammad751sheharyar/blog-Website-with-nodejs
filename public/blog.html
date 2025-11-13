@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Website</title>
     <link rel="stylesheet" href="style.css">
-      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -26,24 +26,26 @@
                 <p>Create a new Blog </p>
                 <div onclick="form.style.display='none',body.style.backgroundColor='white'" class="cross">x</div>
             </div>
-            <input type="text" placeholder="blogTittle" id="blogTittle" onfocus="this.style.backgroundColor='gray'",
+            <input type="text" placeholder="blogTittle" id="blogTittle" onfocus="this.style.backgroundColor='gray'" ,
                 onblur="this.style.backgroundColor='gray'">
             <textarea name="text" placeholder="Blog" id="blogContent"></textarea>
             <input type="text" placeholder="Author Name" id="authorName">
             <!-- <input type="file" placeholder="file" id="file"> -->
 
-            <button  id="bloges" onclick="bloges(),body.style.backgroundColor='white'" class="submit">submit</button>
+            <button id="bloges" onclick="bloges(),body.style.backgroundColor='white'" class="submit">submit</button>
         </div>
         <div class="createBlog">
-            
+
             <button class="btnp " id="clickbtn" onclick="panel(), body.style.backgroundColor='gray'">Create
                 Blog</button>
+            <button class="btnp" id="viewBlog" onclick="viewBlog()">view Blog</button>
         </div>
         <div class="blogseciton" id="panel">
         </div>
     </div>
     <p id="userd"></p>
     <script src="blog.js"></script>
+    <script src="viewBlog.js"></script>
 </body>
 
 </html>

@@ -75,7 +75,10 @@ function bloges() {
 
 }
 
-
 function blLogout() {
   window.open("login.html")
 }
+// let viewBlog = document.getElementById('viewBlog');
+// viewBlog.addEventListener('click', async () => {
+//    console.log("event fired");
+// });
