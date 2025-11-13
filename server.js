@@ -4,7 +4,12 @@
     let app = express();
     let PORT=3000;
     const roter=require("./Router/route");
-    let mongoose = require('mongoose')
+    app.use(express.json());
+    app.use(cors())
+    app.use(express.static(path.join(__dirname, 'public')));
+    
+    let mongoose = require('mongoose');
+// const { env } = require('process');
 
     mongoose.connect("mongodb+srv://Muhammad_Sheharyar:signature@cluster0.gqwbzi9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
         {
@@ -19,7 +24,6 @@
     })
 
     app.use("/api",roter);
-
 
 
 

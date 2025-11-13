@@ -1,5 +1,4 @@
 const mongoose=require("mongoose");
-
 const UserData=new mongoose.Schema({
     Fname:{
        type:String,

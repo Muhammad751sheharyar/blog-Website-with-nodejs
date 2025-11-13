@@ -21,8 +21,8 @@ submitBtn.addEventListener('click', async () => {
           window.open('login.html');
 
     } catch (err) {
-        alert("Signup Failed")
-        console.error("Error:", err);
+        // alert("Signup Failed")
+        console.log(err);
     }
 });
 

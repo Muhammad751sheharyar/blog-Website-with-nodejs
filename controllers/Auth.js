@@ -4,7 +4,7 @@ const hashy = require("hashy");
 const UserBlog = require("../dbschema/blogSchema");
 async function home(req, res) {
     try {
-        const { Fname, Lname, Email, password } = req.body;
+        const {Fname ,Lname, Email, password}=req.body;
         hashy.hash(password, function (err, hash) {
             if (err) {
                 return console.log(err);
@@ -79,4 +79,4 @@ async function viewBlog(req, res) {
       console.log(data);
 }
 
-module.exports = { home, login, CreateBlog, viewBlog }    
+module.exports = { home, login, CreateBlog ,viewBlog}    
